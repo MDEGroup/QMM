@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Parse
+Bundle-SymbolicName: QualityMetamodel.engine
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: QualityMetamodel.resource.qualitymetamodel;bundle-version="1.0.0",
+ QualityMetamodel;bundle-version="1.0.0",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.12.0",
+ org.eclipse.core.runtime;bundle-version="3.12.0"
+Export-Package: qualityMetamodel.engine
+Bundle-ClassPath: LIB/mdeforge.client.jar,
+ .

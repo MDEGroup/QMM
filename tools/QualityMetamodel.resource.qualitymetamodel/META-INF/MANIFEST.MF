@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: qualitymetamodel
+Bundle-SymbolicName: QualityMetamodel.resource.qualitymetamodel;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.change,
+ org.eclipse.emf.validation;resolution:=optional,
+ org.emftext.access;resolution:=optional,
+ org.eclipse.debug.core;resolution:=optional,
+ org.emftext.commons.antlr3_4_0,
+ QualityMetamodel
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: QualityMetamodel.resource.qualitymetamodel,
+  QualityMetamodel.resource.qualitymetamodel.analysis,
+  QualityMetamodel.resource.qualitymetamodel.mopp,
+  QualityMetamodel.resource.qualitymetamodel.debug,
+  QualityMetamodel.resource.qualitymetamodel.launch,
+  QualityMetamodel.resource.qualitymetamodel.grammar,
+  QualityMetamodel.resource.qualitymetamodel.util
+Bundle-Activator: QualityMetamodel.resource.qualitymetamodel.mopp.QualitymetamodelPlugin

@@ -1,0 +1,582 @@
+{
+name:MyATLTransformationQualityModel,
+metricProviders:
+	[{	name:InputModels,
+		description:"The number of input models for a transformation.",
+		id:r12348112354545987c00123t
+		},
+		{	name:OutputModels,
+		description:"The number of output models for a transformation.",
+		id:f96guzeeoaioeab6egytuijn
+		},
+		{	name:Units,
+		description:"The number of transformation units.",
+		id:apnz97v207e0ex0jejgo66fs8
+		},
+		{	name:TransformationRules,
+		description:"The number of transformation rules.",
+		id:t9jfhvum298xbiuu0ndqcxbmn
+		},
+		{	name:NonLazyMatchedRules,
+		description:"The number of Non-Lazy matched rules of a transformation.",
+		id:bjoljpsbofvizhfgmm8h0123m
+		},
+		{	name:CalledRules,
+		description:"The number of called rules of a transformation.",
+		id:uapf8sre6pmw0ruixwi8e598l
+		},
+		{	name:RulesWithFilter,
+		description:"The number of rules with filter in a transformation.",
+		id:k1pxdjoyc05a2yu2jg1z8p8pm
+		},
+		{	name:DirectCopies,
+		description:"www.mdeforge.it/",
+		id:r71f8me9rdz70o38bq7tjjpyp
+		},
+		{	name:RulesWithLocalVariables,
+		description:"www.mdeforge.it/",
+		id:s9ohdka8jtewie96rj88c1pxp
+		},
+		{	name:UnusedHelpers,
+		description:"www.mdeforge.it/",
+		id:ehyruua7jq2av775q37osdcdx
+		},
+		{	name:UnusedCalledRules,
+		description:"www.mdeforge.it/",
+		id:vzdc6p044z2cdd8vwv9adc9m8
+		},
+		{	name:CallsToResolveTemp,
+		description:"www.mdeforge.it/",
+		id:hbc76gv2ej7xul5wzuw8l14oh
+		},
+		{	name:ElemetnsPerOutputPattern,
+		description:"www.mdeforge.it/",
+		id:ku9dnnkt26tr0fjtgkfzclynv
+		},
+		{	name:RulesPerInputPattern,
+		description:"www.mdeforge.it/",
+		id:a16mapl0lfikrzeehodb9panp
+		},
+		{	name:UnusedInputPatternElements,
+		description:"www.mdeforge.it/",
+		id:tv437nessnsms8blkd5l0yodk
+		},
+		{	name:ParametersPerCalledRule,
+		description:"www.mdeforge.it/",
+		id:gn9ndexxhpsje3oaiop2kn7x
+		},
+		{	name:UnusedParametersPerCalledRule,
+		description:"www.mdeforge.it/",
+		id:kn7xgi65hb88huoey2b9fyld
+		},
+		{	name:HelperCyclomaticComplexity,
+		description:"www.mdeforge.it/",
+		id:fyldsjxwrdc6nvz3v8erkp15z
+		},
+		{	name:VariablesPerHelper,
+		description:"www.mdeforge.it/",
+		id:kp15ztbfpyfbsq4f3l7jn5q4k
+		},
+		{	name:ImportedUnits,
+		description:"www.mdeforge.it/",
+		id:n5q4kx7yziw9wcqicoqosietx
+		},
+		{	name:TimesAUnitIsImported,
+		description:"www.mdeforge.it/",
+		id:sietxtcmq4ee5k6q3daiws8kh
+		},
+		{	name:LazyRuleFanIn,
+		description:"www.mdeforge.it/",
+		id:ws8khr0ml42n9sk0iwbdext6j
+		},
+		{	name:CalledRuleFanIn,
+		description:"www.mdeforge.it/",
+		id:ext6j7xjnf4c9o379trl941l9
+		},
+		{	name:RuleFanOut,
+		description:"www.mdeforge.it/",
+		id:h4pyvkl8m85rpdupb27iyjapi
+		},
+		{	name:HelperFanOut,
+		description:"www.mdeforge.it/",
+		id:yjapi0p6xtivyf4rcnomkaf0n
+		},
+		{	name:UnitFanIn,
+		description:"www.mdeforge.it/",
+		id:kaf0nw9ohnymgoa2dzrebcdss
+		},
+		{	name:UnitFanOut,
+		description:"www.mdeforge.it/",
+		id:bcdss6xkcsflqskbhb5fil7cv
+		},
+		{	name:CallsToResolveTempPerRule,
+		description:"www.mdeforge.it/",
+		id:u0f4iq84pxd3rlwcal405zxvt
+		},
+	],
+	qualityTypes:
+	[
+		{
+	 	name: InputModels_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: OutputModels_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: Units_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: UnusedHelpers_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: CallsToResolveTemp_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: ElementsPerOutputPattern_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: ParametersPerCalledRule_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: UnusedParametersPerCalledRule_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: TimesAUnitIsImported_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: LazyRuleFanIn_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: CalledRuleFanIn_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: UnitFanIn_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: UnitFanOut_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: CallsToResolveTempPerRule_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: Understandability_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: Modifiability_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: DirectCopies_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: HelperCyclomaticComplexity_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: ImportedUnits_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: RuleFanOut_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: Completeness_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: Consistency_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: TransformationRules_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: CalledRules_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: UnusedCalledRules_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: HelperFanOut_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: Conciseness_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: Reusability_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name: NonLazyMatchedRules_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name:RulesWithFilter_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name:RulesWithLocalVariables_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name:RulesWithLocalVariables_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name:RulesPerInputPattern_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name:UnusedInputPatternElements_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+		{
+	 	name:VariablesPerHelper_QT,
+	 	_type: Real,
+	 	value: UNSET
+		}
+	],
+	qualityAttributes:
+	[
+		{	
+			name:Understandability_QA,
+			qualityAttributes:[],
+			values:Understandability_QV
+		}
+	],
+	qualityValues:
+	[
+		{
+			name: InputModels_QV,
+			measuredBy: InputModels,
+			type:InputModels_QT
+		}
+		{
+			name: OutputModels_QV,
+			measuredBy: OutputModels,
+			type:OutputModels_QT
+		}
+		{
+			name: Units_QV,
+			measuredBy: Units,
+			type:Units_QT
+		}
+		{
+			name: UnusedHelpers_QV,
+			measuredBy: UnusedHelpers,
+			type:UnusedHelpers_QT
+		}
+		{
+			name: CallsToResolveTemp_QV,
+			measuredBy: CallsToResolveTemp,
+			type:CallsToResolveTemp_QT
+		}
+		{
+			name: ElementsPerOutputPattern_QV,
+			measuredBy: ElemetnsPerOutputPattern,
+			type:ElementsPerOutputPattern_QT
+		}
+		{
+			name: ParametersPerCalledRule_QV,
+			measuredBy: ParametersPerCalledRule,
+			type:ParametersPerCalledRule_QT
+		}
+		{
+			name: UnusedParametersPerCalledRule_QV,
+			measuredBy: UnusedParametersPerCalledRule,
+			type:UnusedParametersPerCalledRule_QT
+		}
+		{
+			name: TimesAUnitIsImported_QV,
+			measuredBy: TimesAUnitIsImported,
+			type:TimesAUnitIsImported_QT
+		}
+		{
+			name: LazyRuleFanIn_QV,
+			measuredBy: LazyRuleFanIn,
+			type:LazyRuleFanIn_QT
+		}
+		{
+			name: CalledRuleFanIn_QV,
+			measuredBy: CalledRuleFanIn,
+			type:CalledRuleFanIn_QT
+		}
+		{
+			name:UnitFanIn_QV,
+			measuredBy: UnitFanIn,
+			type:UnitFanIn_QT
+		}
+		{
+			name:UnitFanOut_QV,
+			measuredBy: UnitFanOut,
+			type:UnitFanOut_QT
+		}
+		{
+			name:CallsToResolveTempPerRule_QV,
+			measuredBy: CallsToResolveTempPerRule,
+			type:CallsToResolveTempPerRule_QT
+		}
+		{
+		name: Understandability_QV,
+		calculatedBy:{
+				name: UNDERSTANDABILITY,
+				aggregatedValue:[InputModels_QV, OutputModels_QV, 
+						Units_QV, UnusedHelpers_QV, 
+						CallsToResolveTemp_QV, ElementsPerOutputPattern_QV, 
+						ParametersPerCalledRule_QV, UnusedParametersPerCalledRule_QV, 
+						TimesAUnitIsImported_QV, LazyRuleFanIn_QV, 
+						CalledRuleFanIn_QV, UnitFanIn_QV, UnitFanOut_QV, 
+						CallsToResolveTempPerRule_QV]
+				expr: ( (-0.407 * InputModels_QV.value.type.value) + 
+						(-0.407 * OutputModels_QV.value.type.value) +
+						(-0.407 * Units_QV.value.type.value) +
+						(-0.407 * UnusedHelpers_QV.value.type.value) +
+						(-0.352 * CallsToResolveTemp_QV.value.type.value) +
+						(-0.375 * ElementsPerOutputPattern_QV.value.type.value) +
+						(-0.407 * ParametersPerCalledRule_QV.value.type.value) +
+						(-0.407 * UnusedParametersPerCalledRule_QV.value.type.value) +
+						(-0.318 * TimesAUnitIsImported_QV.value.type.value) +
+						(-0.356 * LazyRuleFanIn_QV.value.type.value) +
+						(-0.407 * CalledRuleFanIn_QV.value.type.value) +
+						(-0.407 * UnitFanIn_QV.value.type.value) +
+						(-0.407 * UnitFanOut_QV.value.type.value) +
+						(-0.326 * CallsToResolveTempPerRule_QV.value.type.value) / 14)
+			},
+		type:Understandability_QT
+	}
+	{
+		name: Modifiability_QV,
+		calculatedBy:{
+				name: MODIFIABILITY,
+				aggregatedValue:[InputModels_QV, OutputModels_QV, 
+						Units_QV, UnusedHelpers_QV, 
+						CallsToResolveTemp_QV, 
+						ParametersPerCalledRule_QV, UnusedParametersPerCalledRule_QV, 
+						CalledRuleFanIn_QV, UnitFanIn_QV, UnitFanOut_QV, 
+						CallsToResolveTempPerRule_QV]
+				expr: ( (-0.407 * InputModels_QV.value.type.value) + 
+						(-0.407 * OutputModels_QV.value.type.value) +
+						(-0.407 * Units_QV.value.type.value) +
+						(-0.407 * UnusedHelpers_QV.value.type.value) +
+						(-0.358 * CallsToResolveTemp_QV.value.type.value) +
+						(-0.407 * ParametersPerCalledRule_QV.value.type.value) +
+						(-0.407 * UnusedParametersPerCalledRule_QV.value.type.value) +
+						(-0.407 * CalledRuleFanIn_QV.value.type.value) +
+						(-0.407 * UnitFanIn_QV.value.type.value) +
+						(-0.407 * UnitFanOut_QV.value.type.value) +
+						(-0.306 * CallsToResolveTempPerRule_QV.value.type.value) / 11)
+			},
+		type:Modifiability_QT
+	}
+		{
+		name: Completeness_QV,
+		calculatedBy:{
+				name: COMPLETENESS,
+				aggregatedValue:[InputModels_QV, OutputModels_QV, 
+						Units_QV, DirectCopies_QV, UnusedHelpers_QV, 
+						ParametersPerCalledRule_QV, UnusedParametersPerCalledRule_QV, 
+						HelperCyclomaticComplexity_QV,ImportedUnits_QV,
+						TimesAUnitIsImported_QV, LazyRuleFanIn_QV, 
+						CalledRuleFanIn_QV, RuleFanOut_QV, UnitFanIn_QV, UnitFanOut_QV]
+				expr: ( (-0.391 * InputModels_QV.value.type.value) + 
+						(-0.391 * OutputModels_QV.value.type.value) +
+						(-0.391 * Units_QV.value.type.value) +
+						(0.322 * DirectCopies_QV.value.type.value) +
+						(-0.391 * UnusedHelpers_QV.value.type.value) +
+						(-0.391 * ParametersPerCalledRule_QV.value.type.value) +
+						(-0.391 * UnusedParametersPerCalledRule_QV.value.type.value) +
+						(-0.357 * HelperCyclomaticComplexity_QV.value.type.value) +
+						(-0.323 * ImportedUnits_QV.value.type.value) +
+						(-0.379 * TimesAUnitIsImported_QV.value.type.value) +
+						(-0.397 * LazyRuleFanIn_QV.value.type.value) +
+						(-0.391 * CalledRuleFanIn_QV.value.type.value) +
+						(-0.333 * RuleFanOut_QV.value.type.value) +
+						(-0.391 * UnitFanIn_QV.value.type.value) +
+						(-0.391 * UnitFanOut_QV.value.type.value)  / 15)
+			},
+		type:Completeness_QT
+	}
+	{
+		name: Consistency_QV,
+		calculatedBy:{
+				name: CONSISTENCY,
+				aggregatedValue:[TransformationRules_QV, CalledRules_QV, 
+								UnusedCalledRules_QV, HelperFanOut_QV]
+				expr: ( (-0.364 * TransformationRules_QV.value.type.value) +
+						(-0.308 * CalledRules_QV.value.type.value) +
+						(-0.308 * UnusedCalledRules_QV.value.type.value) +
+						(-0.302 * HelperFanOut_QV.value.type.value) / 4)
+			},
+		type:Consistency_QT
+	}
+	{
+		name: Conciseness_QV,
+		calculatedBy:{
+				name: CONCISENESS,
+				aggregatedValue:[InputModels_QV, OutputModels_QV, 
+						Units_QV, UnusedHelpers_QV, UnusedCalledRules_QV, 
+						TransformationRules_QV, CalledRules_QV,
+						ParametersPerCalledRule_QV, UnusedParametersPerCalledRule_QV, 
+						CalledRuleFanIn_QV, UnitFanIn_QV, UnitFanOut_QV]
+				expr: ( (-0.345 * InputModels_QV.value.type.value) + 
+						(-0.345 * OutputModels_QV.value.type.value) +
+						(-0.345 * Units_QV.value.type.value) +
+						(-0.273 * TransformationRules_QV.value.type.value) +
+						(-0.365 * CalledRules_QV.value.type.value) +
+						(-0.345 * UnusedHelpers_QV.value.type.value) +
+						(-0.365 * UnusedCalledRules_QV.value.type.value) +
+						(-0.345 * ParametersPerCalledRule_QV.value.type.value) +
+						(-0.345 * UnusedParametersPerCalledRule_QV.value.type.value) +
+						(-0.345 * CalledRuleFanIn_QV.value.type.value) +
+						(-0.345 * UnitFanIn_QV.value.type.value) +
+						(-0.345 * UnitFanOut_QV.value.type.value)  / 12)
+			},
+		type:Conciseness_QT
+	}
+	{
+		name: Reusability_QV,
+		calculatedBy:{
+				name: REUSABILITY,
+				aggregatedValue:[NonLazyMatchedRules_QV, CalledRules_QV,
+						RulesWithFilter_QV, RulesWithLocalVariables_QV, 
+						UnusedCalledRules_QV,  RulesPerInputPattern_QV, 
+						UnusedInputPatternElements_QV, VariablesPerHelper_QV]
+				expr: ( (-0.383 * NonLazyMatchedRules_QV.value.type.value) + 
+						(-0.347 * CalledRules_QV.value.type.value) +
+						(-0.402 * RulesWithFilter_QV.value.type.value) +
+						(-0.302 * RulesWithLocalVariables_QV.value.type.value) +
+						(-0.347 * UnusedCalledRules_QV.value.type.value) +
+						(-0.315 * RulesPerInputPattern_QV.value.type.value) +
+						(-0.297 * UnusedInputPatternElements_QV.value.type.value) +
+						(-0.328 * VariablesPerHelper_QV.value.type.value) / 8)
+			},
+		type:Reusability_QT
+	}
+	{
+		name:DirectCopies_QV,
+		measuredBy: DirectCopies,
+		type:DirectCopies_QT
+	}
+	{
+		name:HelperCyclomaticComplexity_QV,
+		measuredBy: HelperCyclomaticComplexity,
+		type:HelperCyclomaticComplexity_QT
+	}
+	{
+		name:ImportedUnits_QV,
+		measuredBy: ImportedUnits,
+		type:ImportedUnits_QT
+	}
+	{
+		name:RuleFanOut_QV,
+		measuredBy: RuleFanOut,
+		type:RuleFanOut_QT
+	}
+	{
+		name:TransformationRules_QV,
+		measuredBy: TransformationRules,
+		type:TransformationRules_QT
+	}
+	{
+		name:CalledRules_QV,
+		measuredBy: CalledRules,
+		type:CalledRules_QT
+	}
+	{
+		name:UnusedCalledRules_QV,
+		measuredBy: UnusedCalledRules,
+		type:UnusedCalledRules_QT
+	}
+	{
+		name:HelperFanOut_QV,
+		measuredBy: HelperFanOut,
+		type:HelperFanOut_QT
+	}
+	{
+		name:NonLazyMatchedRules_QV,
+		measuredBy: NonLazyMatchedRules,
+		type:NonLazyMatchedRules_QT
+	}
+	{
+		name:RulesWithFilter_QV,
+		measuredBy: RulesWithFilter,
+		type:RulesWithFilter_QT
+	}
+	{
+		name:RulesWithLocalVariables_QV,
+		measuredBy: RulesWithLocalVariables,
+		type:RulesWithLocalVariables_QT
+	}
+	{
+		name:RulesPerInputPattern_QV,
+		measuredBy: RulesPerInputPattern,
+		type:RulesPerInputPattern_QT
+	}
+	{
+		name:UnusedInputPatternElements_QV,
+		measuredBy: UnusedInputPatternElements,
+		type:UnusedInputPatternElements_QT
+	}
+	{
+		name:VariablesPerHelper_QV,
+		measuredBy: VariablesPerHelper,
+		type:VariablesPerHelper_QT
+	}
+	]
+}

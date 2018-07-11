@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ASCII"?>
+<QM:QualityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QM="http://www.univaq.disim.it/mde/qualitymm" xmlns:QMM_OCL="http://www.univaq.disim.it/mde/qualitymm/ocl" name="MyEcoreQualityModel">
+  <metricProviders name="NOH" description="Number of Total structural feature with inherited" id="r12348112354545987c00123t"/>
+  <metricProviders name="ADI" description="Number of concrete immediate Featureless MetaClass" id="f96guzeeoaioeab6egytuijn"/>
+  <metricProviders name="ANA" description="Number of abstract immediate Featureless MetaClass" id="apnz97v207e0ex0jejgo66fs8"/>
+  <metricProviders name="ANDM" description="Number of Opposite Reference " id="t9jfhvum298xbiuu0ndqcxbmn"/>
+  <metricProviders name="ANM" description="Number of Total Attribute" id="bjoljpsbofvizhfgmm8h0123m"/>
+  <metricProviders name="ANMC" description="Number of Total Attribute with inherited" id="r71f8me9rdz70o38bq7tjjpyp"/>
+  <metricProviders name="ANR" description="Number of concrete Completely Featureless MetaClass" id="uapf8sre6pmw0ruixwi8e598l"/>
+  <metricProviders name="NAM" description="Number of abstract MetaClass" id="k1pxdjoyc05a2yu2jg1z8p8pm"/>
+  <metricProviders name="NCM" description="Number of concrete MetaClass" id="s9ohdka8jtewie96rj88c1pxp"/>
+  <qualityTypes xsi:type="QM:IntegerValueType" varName="ModelingConceptSize_QT" val="//@qualityValues.7" value="2"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="ANM_QT" val="//@qualityValues.0" value="2.0"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="ANR_QT" val="//@qualityValues.1" value="0.0"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="ANMC_QT" val="//@qualityValues.2" value="2.0"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="ANDM_QT" val="//@qualityValues.3" value="8.0"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="ANA_QT" val="//@qualityValues.4" value="0.0"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="Intension_QT" val="//@qualityValues.9" value="4.0"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="Coupling_QT" val="//@qualityValues.10" value="8.0"/>
+  <qualityTypes xsi:type="QM:IntegerValueType" varName="AbstractMetaclassSize_QT" val="//@qualityValues.8" value="0"/>
+  <qualityTypes xsi:type="QM:IntegerValueType" varName="Hierarchy_QT" val="//@qualityValues.6" value="10"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="Inheritance_QT" val="//@qualityValues.5" value="0.0"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="Reusability_QT" val="//@qualityValues.11" value="1.4000000000000004"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="Understandability_QT" val="//@qualityValues.12" value="3.3999999999999995"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="Functionality_QT" val="//@qualityValues.13" value="5.200000000000001"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="Extendibility_QT" val="//@qualityValues.14" value="-1.1102230246251565E-16"/>
+  <qualityTypes xsi:type="QM:RealValueType" varName="Well_Structured_QT" val="//@qualityValues.15" value="2.6"/>
+  <qualityAttributes varName="REUSABILITY_QA" value="//@qualityValues.11"/>
+  <qualityAttributes varName="UNDERSTANDABILITY_QA" value="//@qualityValues.12"/>
+  <qualityAttributes varName="FUNCTIONALITY_QA" value="//@qualityValues.13"/>
+  <qualityAttributes varName="EXTENDIBILITY_QA" value="//@qualityValues.14"/>
+  <qualityAttributes varName="WELL_STRUCTURED_QA" value="//@qualityValues.15"/>
+  <qualityAttributes varName="ModelingConceptSize_QA" value="//@qualityValues.7"/>
+  <qualityAttributes varName="AbstractMetaclassSize_QA" value="//@qualityValues.8"/>
+  <qualityAttributes varName="Inheritance_QA" value="//@qualityValues.5"/>
+  <qualityAttributes varName="Hierarchy_QA" value="//@qualityValues.6"/>
+  <qualityAttributes varName="Intension_QA" value="//@qualityValues.9"/>
+  <qualityAttributes varName="Coupling_QA" value="//@qualityValues.10"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="ANM_QV" variableExp="//@qualityValues.9/@calculatedBy/@ref/@source/@source/@source" valueType="//@qualityTypes.1" measuredBy="//@metricProviders.4"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="ANR_QV" variableExp="//@qualityValues.9/@calculatedBy/@ref/@source/@argument/@source" valueType="//@qualityTypes.2" measuredBy="//@metricProviders.6"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="ANMC_QV" variableExp="//@qualityValues.9/@calculatedBy/@ref/@argument/@source" valueType="//@qualityTypes.3" measuredBy="//@metricProviders.5"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="ANDM_QV" variableExp="//@qualityValues.10/@calculatedBy/@ref/@source/@source" valueType="//@qualityTypes.4" measuredBy="//@metricProviders.3"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="ANA_QV" variableExp="//@qualityValues.10/@calculatedBy/@ref/@argument/@source" valueType="//@qualityTypes.5" measuredBy="//@metricProviders.2"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="Inheritance_QV" variableExp="//@qualityValues.12/@calculatedBy/@ref/@source/@source/@argument/@argument/@source" valueType="//@qualityTypes.10" measuredBy="//@metricProviders.1"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="Hierarchy_QV" variableExp="//@qualityValues.12/@calculatedBy/@ref/@argument/@argument/@source //@qualityValues.15/@calculatedBy/@ref/@argument/@argument/@source" valueType="//@qualityTypes.9" measuredBy="//@metricProviders.0"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="ModelingConceptSize_QV" variableExp="//@qualityValues.11/@calculatedBy/@ref/@argument/@argument/@exp/@source/@source //@qualityValues.12/@calculatedBy/@ref/@source/@argument/@argument/@exp/@source/@source //@qualityValues.13/@calculatedBy/@ref/@argument/@argument/@source //@qualityValues.14/@calculatedBy/@ref/@argument/@argument/@exp/@source/@source" valueType="//@qualityTypes.0" measuredBy="//@metricProviders.8"/>
+  <qualityValues xsi:type="QM:SingleValue" varName="AbstractMetaclassSize_QV" variableExp="//@qualityValues.11/@calculatedBy/@ref/@argument/@argument/@exp/@argument/@source //@qualityValues.12/@calculatedBy/@ref/@source/@argument/@argument/@exp/@argument/@source //@qualityValues.14/@calculatedBy/@ref/@argument/@argument/@exp/@argument/@source" valueType="//@qualityTypes.8" measuredBy="//@metricProviders.7"/>
+  <qualityValues xsi:type="QM:AggregatedValue" varName="Intension_QV" variableExp="//@qualityValues.11/@calculatedBy/@ref/@source/@argument/@argument/@source //@qualityValues.12/@calculatedBy/@ref/@source/@source/@source/@argument/@argument/@source //@qualityValues.13/@calculatedBy/@ref/@source/@argument/@argument/@source //@qualityValues.14/@calculatedBy/@ref/@source/@argument/@argument/@source //@qualityValues.15/@calculatedBy/@ref/@source/@argument/@argument/@source" valueType="//@qualityTypes.6">
+    <calculatedBy name="Intension" aggregatedValues="//@qualityValues.0 //@qualityValues.1 //@qualityValues.2">
+      <ref xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+        <argument xsi:type="QMM_OCL:PropertyCallExp">
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+          <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.2"/>
+        </argument>
+        <source xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+          <argument xsi:type="QMM_OCL:PropertyCallExp">
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.1"/>
+          </argument>
+          <source xsi:type="QMM_OCL:PropertyCallExp">
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.0"/>
+          </source>
+        </source>
+      </ref>
+    </calculatedBy>
+  </qualityValues>
+  <qualityValues xsi:type="QM:AggregatedValue" varName="Coupling_QV" variableExp="//@qualityValues.11/@calculatedBy/@ref/@source/@source/@argument/@source //@qualityValues.12/@calculatedBy/@ref/@source/@source/@source/@source/@argument/@source //@qualityValues.13/@calculatedBy/@ref/@source/@source/@argument/@source //@qualityValues.14/@calculatedBy/@ref/@source/@source/@argument/@source //@qualityValues.15/@calculatedBy/@ref/@source/@source/@argument/@source" valueType="//@qualityTypes.7">
+    <calculatedBy name="Coupling" aggregatedValues="//@qualityValues.3 //@qualityValues.4">
+      <ref xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+        <argument xsi:type="QMM_OCL:PropertyCallExp">
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+          <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.4"/>
+        </argument>
+        <source xsi:type="QMM_OCL:PropertyCallExp">
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+          <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+          <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.3"/>
+        </source>
+      </ref>
+    </calculatedBy>
+  </qualityValues>
+  <qualityValues xsi:type="QM:AggregatedValue" varName="Reusability_QV" valueType="//@qualityTypes.11">
+    <calculatedBy name="REUSABILITY" aggregatedValues="//@qualityValues.10 //@qualityValues.9 //@qualityValues.7 //@qualityValues.8">
+      <ref xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+        <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+          <argument xsi:type="QMM_OCL:BraceExp">
+            <exp xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+              <argument xsi:type="QMM_OCL:PropertyCallExp">
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.8"/>
+              </argument>
+              <source xsi:type="QMM_OCL:PropertyCallExp">
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.7"/>
+              </source>
+            </exp>
+          </argument>
+          <source xsi:type="QMM_OCL:RealExp" realSymbol="0.3"/>
+        </argument>
+        <source xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+          <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:PropertyCallExp">
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.9"/>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="0.8"/>
+          </argument>
+          <source xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:PropertyCallExp">
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.10"/>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="-0.3"/>
+          </source>
+        </source>
+      </ref>
+    </calculatedBy>
+  </qualityValues>
+  <qualityValues xsi:type="QM:AggregatedValue" varName="Understandability_QV" valueType="//@qualityTypes.12">
+    <calculatedBy name="UNDERSTANDABILITY" aggregatedValues="//@qualityValues.10 //@qualityValues.9 //@qualityValues.7 //@qualityValues.8 //@qualityValues.5 //@qualityValues.6">
+      <ref xsi:type="QMM_OCL:AddOpCallExp" operationName="-">
+        <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+          <argument xsi:type="QMM_OCL:PropertyCallExp">
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.6"/>
+          </argument>
+          <source xsi:type="QMM_OCL:RealExp" realSymbol="0.2"/>
+        </argument>
+        <source xsi:type="QMM_OCL:AddOpCallExp" operationName="-">
+          <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:BraceExp">
+              <exp xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+                <argument xsi:type="QMM_OCL:PropertyCallExp">
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                  <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.8"/>
+                </argument>
+                <source xsi:type="QMM_OCL:PropertyCallExp">
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                  <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.7"/>
+                </source>
+              </exp>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="0.1"/>
+          </argument>
+          <source xsi:type="QMM_OCL:AddOpCallExp" operationName="-">
+            <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+              <argument xsi:type="QMM_OCL:PropertyCallExp">
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.5"/>
+              </argument>
+              <source xsi:type="QMM_OCL:RealExp" realSymbol="0.1"/>
+            </argument>
+            <source xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+              <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+                <argument xsi:type="QMM_OCL:PropertyCallExp">
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                  <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.9"/>
+                </argument>
+                <source xsi:type="QMM_OCL:RealExp" realSymbol="0.7"/>
+              </argument>
+              <source xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+                <argument xsi:type="QMM_OCL:PropertyCallExp">
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                  <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                  <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.10"/>
+                </argument>
+                <source xsi:type="QMM_OCL:RealExp" realSymbol="-0.2"/>
+              </source>
+            </source>
+          </source>
+        </source>
+      </ref>
+    </calculatedBy>
+  </qualityValues>
+  <qualityValues xsi:type="QM:AggregatedValue" varName="Functionality_QV" valueType="//@qualityTypes.13">
+    <calculatedBy name="FUNCTIONALITY" aggregatedValues="//@qualityValues.10 //@qualityValues.9 //@qualityValues.7">
+      <ref xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+        <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+          <argument xsi:type="QMM_OCL:PropertyCallExp">
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.7"/>
+          </argument>
+          <source xsi:type="QMM_OCL:RealExp" realSymbol="0.2"/>
+        </argument>
+        <source xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+          <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:PropertyCallExp">
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.9"/>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="0.4"/>
+          </argument>
+          <source xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:PropertyCallExp">
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.10"/>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="0.4"/>
+          </source>
+        </source>
+      </ref>
+    </calculatedBy>
+  </qualityValues>
+  <qualityValues xsi:type="QM:AggregatedValue" varName="Extendibility_QV" valueType="//@qualityTypes.14">
+    <calculatedBy name="EXTENDIBILITY" aggregatedValues="//@qualityValues.10 //@qualityValues.9 //@qualityValues.7">
+      <ref xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+        <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+          <argument xsi:type="QMM_OCL:BraceExp">
+            <exp xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+              <argument xsi:type="QMM_OCL:PropertyCallExp">
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.8"/>
+              </argument>
+              <source xsi:type="QMM_OCL:PropertyCallExp">
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+                <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+                <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.7"/>
+              </source>
+            </exp>
+          </argument>
+          <source xsi:type="QMM_OCL:RealExp" realSymbol="0.2"/>
+        </argument>
+        <source xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+          <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:PropertyCallExp">
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.9"/>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="0.3"/>
+          </argument>
+          <source xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:PropertyCallExp">
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.10"/>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="-0.2"/>
+          </source>
+        </source>
+      </ref>
+    </calculatedBy>
+  </qualityValues>
+  <qualityValues xsi:type="QM:AggregatedValue" varName="Well_Structured_QV" valueType="//@qualityTypes.15">
+    <calculatedBy name="WELL_STRUCTURED" aggregatedValues="//@qualityValues.10 //@qualityValues.9 //@qualityValues.6">
+      <ref xsi:type="QMM_OCL:AddOpCallExp" operationName="-">
+        <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+          <argument xsi:type="QMM_OCL:PropertyCallExp">
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+            <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+            <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.6"/>
+          </argument>
+          <source xsi:type="QMM_OCL:RealExp" realSymbol="0.1"/>
+        </argument>
+        <source xsi:type="QMM_OCL:AddOpCallExp" operationName="+">
+          <argument xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:PropertyCallExp">
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.9"/>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="0.8"/>
+          </argument>
+          <source xsi:type="QMM_OCL:MulOpCallExp" operationName="*">
+            <argument xsi:type="QMM_OCL:PropertyCallExp">
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="type"/>
+              <calls xsi:type="QMM_OCL:NavigationOrAttributeCall" name="value"/>
+              <source xsi:type="QMM_OCL:VariableExp" referredVariable="//@qualityValues.10"/>
+            </argument>
+            <source xsi:type="QMM_OCL:RealExp" realSymbol="-0.2"/>
+          </source>
+        </source>
+      </ref>
+    </calculatedBy>
+  </qualityValues>
+</QM:QualityModel>

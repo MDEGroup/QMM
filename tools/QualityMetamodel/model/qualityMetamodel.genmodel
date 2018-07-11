@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/qualityModel/src" modelPluginID="qualityModel"
+    modelName="QualityMetamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>qualityMetamodel.ecore</foreignModel>
+  <genPackages prefix="QualityMetamodel" disposableProviderFactory="true" ecorePackage="qualityMetamodel.ecore#/">
+    <genClasses ecoreClass="qualityMetamodel.ecore#//QualityModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QualityModel/metricProviders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QualityModel/qualityTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QualityModel/qualityAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QualityModel/qualityValues"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//QualityAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QualityAttribute/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QualityAttribute/qualityAttributes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//Value">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//Value/valueType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//Value/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//ValueType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//ValueType/val"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//SingleValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//SingleValue/measuredBy"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//AggregatedValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//AggregatedValue/calculatedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//Operation/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//Operation/aggregatedValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//Operation/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//Operation/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//MetricProvider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//MetricProvider/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//MetricProvider/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//MetricProvider/id"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//TextValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//TextValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//RangeValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//RangeValueType/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//RangeValueType/max"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//AggregatedValueMetric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//AggregatedValueMetric/minimum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//AggregatedValueMetric/maximum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//AggregatedValueMetric/average"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//AggregatedValueMetric/median"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//AggregatedValueMetric/standardDeviation"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//EnumerationMetric">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//EnumerationMetric/set"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//EnumerationMetric/value"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//EnumerationItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//EnumerationItem/name"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//RealValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//RealValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//BooleanValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//BooleanValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//IntegerValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//IntegerValueType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="qualityMetamodel.ecore#//ListValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//ListValue/elements"/>
+    </genClasses>
+    <nestedGenPackages prefix="QMM_OCL" disposableProviderFactory="true" ecorePackage="qualityMetamodel.ecore#//QMM_OCL">
+      <genDataTypes ecoreDataType="qualityMetamodel.ecore#//QMM_OCL/Boolean"/>
+      <genDataTypes ecoreDataType="qualityMetamodel.ecore#//QMM_OCL/Double"/>
+      <genDataTypes ecoreDataType="qualityMetamodel.ecore#//QMM_OCL/Integer"/>
+      <genDataTypes ecoreDataType="qualityMetamodel.ecore#//QMM_OCL/String"/>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/LocatedElement">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/LocatedElement/line"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/LocatedElement/column"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/LocatedElement/charStart"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/LocatedElement/charEnd"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/NamedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/NamedElement/name"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/Module">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Module/metamodels"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Module/imports"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Module/elements"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/ModuleElement">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/ModuleElement/module"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/Import">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Import/module"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclExpression">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/type"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/ifExp3"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/appliedProperty"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/letExp"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/loopExp"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/parentOperation"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/initializedVariable"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/ifExp2"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/owningOperation"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/ifExp1"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/owningAttribute"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclExpression/appliedOperator"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/VariableExp">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/VariableExp/referredVariable"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/SuperExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/SelfExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/EnvExp"/>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/PrimitiveExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/StringExp">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/StringExp/stringSymbol"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/BooleanExp">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/BooleanExp/booleanSymbol"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/NumericExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/RealExp">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/RealExp/realSymbol"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/IntegerExp">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/IntegerExp/integerSymbol"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/CollectionExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/CollectionExp/parts"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/CollectionPart">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/CollectionPart/collection"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/CollectionRange">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/CollectionRange/first"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/CollectionRange/last"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/CollectionItem">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/CollectionItem/item"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/BagExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OrderedSetExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/SequenceExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/SetExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/TupleExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/TupleExp/tuplePart"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/TuplePart">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/TuplePart/tuple"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/MapExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/MapExp/elements"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/MapElement">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/MapElement/map"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/MapElement/key"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/MapElement/value"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/EnumLiteralExp">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/EnumLiteralExp/name"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclUndefinedExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/StaticPropertyCallExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/StaticPropertyCallExp/source"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/StaticPropertyCallExp/staticCall"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/StaticPropertyCall">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/StaticPropertyCall/staticCallExp"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/StaticNavigationOrAttributeCall">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/StaticNavigationOrAttributeCall/name"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/StaticOperationCall">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/StaticOperationCall/arguments"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/StaticOperationCall/operationName"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/PropertyCallExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/PropertyCallExp/calls"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/PropertyCallExp/source"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/PropertyCall">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/PropertyCall/callExp"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/NavigationOrAttributeCall">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/NavigationOrAttributeCall/name"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OperationCall">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OperationCall/arguments"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/OperationCall/operationName"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OperatorCallExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OperatorCallExp/argument"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/OperatorCallExp/operationName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OperatorCallExp/source"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/NotOpCallExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/RelOpCallExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/EqOpCallExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/AddOpCallExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/IntOpCallExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/MulOpCallExp"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/LambdaCallExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LambdaCallExp/arguments"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/BraceExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/BraceExp/exp"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/CollectionOperationCall"/>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/LoopExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LoopExp/body"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LoopExp/iterators"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/IterateExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/IterateExp/result"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/IteratorExp">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/IteratorExp/name"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/LetExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LetExp/variable"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LetExp/in_"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/IfExp">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/IfExp/thenExpression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/IfExp/condition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/IfExp/elseExpression"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/VariableDeclaration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/VariableDeclaration/varName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/VariableDeclaration/type"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/VariableDeclaration/variableExp"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/LocalVariable">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LocalVariable/letExp"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LocalVariable/initExpression"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LocalVariable/baseExp"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/LocalVariable/eq"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/Iterator">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Iterator/loopExpr"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/Parameter">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Parameter/operation"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/CollectionType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/CollectionType/elementType"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/OclType/name"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/definitions"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/oclExpression"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/operation"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/mapType2"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/attribute"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/mapType"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/collectionTypes"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/tupleTypeAttribute"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/variableDeclaration"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/lambdaReturnType"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/lambdaArgType"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclType/staticPropertyCall"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclModelElementExp">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclModelElementExp/model"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/OclModelElementExp/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/Primitive"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/StringType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/BooleanType"/>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/NumericType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/IntegerType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/RealType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/BagType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OrderedSetType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/SequenceType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/SetType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclAnyType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/TupleType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/TupleType/attributes"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/TupleTypeAttribute">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/TupleTypeAttribute/type"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/TupleTypeAttribute/tupleType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/TupleTypeAttribute/name"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclModelElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclModelElement/model"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/MapType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/MapType/valueType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/MapType/keyType"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/LambdaType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LambdaType/returnType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/LambdaType/argumentTypes"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/EnvType"/>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclFeatureDefinition">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclFeatureDefinition/feature"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclFeatureDefinition/context_"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/OclFeatureDefinition/static"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclContextDefinition">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclContextDefinition/definition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclContextDefinition/context_"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclFeature">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclFeature/definition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/OclFeature/eq"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/Attribute">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Attribute/initExpression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Attribute/type"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/Operation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Operation/parameters"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Operation/returnType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/Operation/body"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclModel">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclModel/elements"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclMetamodel">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclMetamodel/model"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qualityMetamodel.ecore#//QMM_OCL/OclMetamodel/uri"/>
+      </genClasses>
+      <genClasses ecoreClass="qualityMetamodel.ecore#//QMM_OCL/OclInstanceModel">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference qualityMetamodel.ecore#//QMM_OCL/OclInstanceModel/metamodel"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

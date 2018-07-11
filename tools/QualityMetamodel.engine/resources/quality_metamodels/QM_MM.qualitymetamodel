@@ -1,0 +1,318 @@
+{
+name:MyEcoreQualityModel,
+metricProviders:
+	[{	name:NOH,
+		description:"Number of Total structural feature with inherited",
+		id:r12348112354545987c00123t
+		},
+		{	name:ADI,
+		description:"Number of concrete immediate Featureless MetaClass",
+		id:f96guzeeoaioeab6egytuijn
+		},
+		{	name:ANA,
+		description:"Number of abstract immediate Featureless MetaClass",
+		id:apnz97v207e0ex0jejgo66fs8
+		},
+		{	name:ANDM,
+		description:"Number of Opposite Reference ",
+		id:t9jfhvum298xbiuu0ndqcxbmn
+		},
+		{	name:ANM,
+		description:"Number of Total Attribute",
+		id:bjoljpsbofvizhfgmm8h0123m
+		},
+		{	name:ANMC,
+		description:"Number of Total Attribute with inherited",
+		id:r71f8me9rdz70o38bq7tjjpyp
+		},
+		{	name:ANR,
+		description:"Number of concrete Completely Featureless MetaClass",
+		id:uapf8sre6pmw0ruixwi8e598l
+		},
+		{	name:NAM,
+		description:"Number of abstract MetaClass",
+		id:k1pxdjoyc05a2yu2jg1z8p8pm
+		},
+		{	name:NCM,
+		description:"Number of concrete MetaClass",
+		id:s9ohdka8jtewie96rj88c1pxp
+		},
+	],
+qualityTypes:
+[
+	{
+	 name: ModelingConceptSize_QT,
+	 type: Integer,
+	 value: UNSET
+	}
+	{
+	 name: ANM_QT,
+	 _type: Real,
+	 value: UNSET
+	}
+	{
+	 name: ANR_QT,
+	 _type: Real,
+	 value: UNSET
+	}
+	{
+	 name: ANMC_QT,
+	 _type: Real,
+	 value: UNSET
+	}
+	{
+	 name: ANDM_QT,
+	 _type: Real,
+	 value: UNSET
+	}
+	{
+	 name: ANA_QT,
+	 _type: Real,
+	 value: UNSET
+	}
+	{
+	 name: Intension_QT,
+	 _type: Real,
+	 value: UNSET
+	}
+	{
+	 name: Coupling_QT,
+	 _type: Real,
+	 value: UNSET
+	}
+	{
+	 name: AbstractMetaclassSize_QT,
+	 type: Integer,
+	 value: UNSET
+	}
+	{
+	 name: Hierarchy_QT,
+	 type: Integer,
+	 value: UNSET
+	}
+	{
+	 name: Inheritance_QT,
+	 _type: Real,
+	 value: UNSET
+	}
+	{name: Reusability_QT,
+	_type:Real,
+	value:UNSET
+	}
+	{name: Understandability_QT,
+	_type:Real,
+	value:UNSET
+	}{name: Functionality_QT,
+	_type:Real,
+	value:UNSET
+	}
+	{name: Extendibility_QT,
+	_type:Real,
+	value:UNSET
+	}
+	{name: Well_Structured_QT,
+	_type:Real,
+	value:UNSET
+	}
+
+],
+qualityAttributes:
+[
+	{	
+		name:REUSABILITY_QA,
+		qualityAttributes:[],
+		values:Reusability_QV
+	}	
+	{	
+		name:UNDERSTANDABILITY_QA,
+		qualityAttributes:[],
+		values:Understandability_QV
+	}	
+	{	
+		name:FUNCTIONALITY_QA,
+		qualityAttributes:[],
+		values:Functionality_QV
+	}	
+	{	
+		name:EXTENDIBILITY_QA,
+		qualityAttributes:[],
+		values:Extendibility_QV
+	}	
+	{	
+		name:WELL_STRUCTURED_QA,
+		qualityAttributes:[],
+		values:Well_Structured_QV
+	}	
+	{	
+		name:ModelingConceptSize_QA,
+		qualityAttributes:[],
+		values:ModelingConceptSize_QV
+	}
+	{	
+		name:AbstractMetaclassSize_QA,
+		qualityAttributes:[],
+		values:AbstractMetaclassSize_QV
+	}
+	{	
+		name:Inheritance_QA,
+		qualityAttributes:[],
+		values:Inheritance_QV
+	}
+	{	
+		name:Hierarchy_QA,
+		qualityAttributes:[],
+		values:Hierarchy_QV
+	}
+	{	
+		name:Intension_QA,
+		qualityAttributes:[],
+		values:Intension_QV
+	}	
+	{	
+		name:Coupling_QA,
+		qualityAttributes:[],
+		values:Coupling_QV
+	}	
+],
+qualityValues:
+[
+	{
+		name: ANM_QV,
+		measuredBy: ANM,
+		type:ANM_QT
+	}
+	{
+		name: ANR_QV,
+		measuredBy: ANR,
+		type:ANR_QT
+	}
+	{
+		name: ANMC_QV,
+		measuredBy: ANMC,
+		type:ANMC_QT
+	}
+	{
+		name: ANDM_QV,
+		measuredBy: ANDM,
+		type:ANDM_QT
+	}
+	{
+		name: ANA_QV,
+		measuredBy: ANA,
+		type:ANA_QT
+	}
+		{
+		name: Inheritance_QV,
+		measuredBy: ADI,
+		type:Inheritance_QT
+	}
+	{
+		name: Hierarchy_QV,
+		measuredBy: NOH,
+		type:Hierarchy_QT
+	}
+	{
+		name: ModelingConceptSize_QV,
+		measuredBy: NCM,
+		type:ModelingConceptSize_QT
+	}
+	{
+		name: AbstractMetaclassSize_QV,
+		measuredBy: NAM,
+		type:AbstractMetaclassSize_QT
+	}
+	{
+		name: Intension_QV,
+		calculatedBy:{
+				name: Intension,
+				aggregatedValue:[ANM_QV, ANR_QV, ANMC_QV]
+				expr:ANM_QV.value.type.value + 
+					ANR_QV.value.type.value + 
+					ANMC_QV.value.type.value
+			},
+		type:Intension_QT
+	}
+	{
+		name: Coupling_QV,
+		calculatedBy:{
+				name: Coupling,
+				aggregatedValue:[ANDM_QV, ANA_QV]
+				expr:ANDM_QV.value.type.value + 
+						ANA_QV.value.type.value
+			},
+		type:Coupling_QT
+	}
+	{
+		name: Reusability_QV,
+		calculatedBy:{
+				name: REUSABILITY,
+				aggregatedValue:[Coupling_QV, Intension_QV, 
+							ModelingConceptSize_QV, AbstractMetaclassSize_QV]
+				expr:-0.3 * Coupling_QV.value.type.value + 
+						0.8 * Intension_QV.value.type.value +
+					0.3 * (ModelingConceptSize_QV.value.type.value + 
+					AbstractMetaclassSize_QV.value.type.value)
+			},
+		type:Reusability_QT
+	}
+	{
+		name: Understandability_QV,
+		calculatedBy:{
+				name: UNDERSTANDABILITY,
+				aggregatedValue:[Coupling_QV, Intension_QV, 
+								ModelingConceptSize_QV, AbstractMetaclassSize_QV, 
+								Inheritance_QV, Hierarchy_QV]
+				expr:-0.2 * Coupling_QV.value.type.value + 
+						0.7 * Intension_QV.value.type.value -
+						0.1 * Inheritance_QV.value.type.value -
+						0.1 * (ModelingConceptSize_QV.value.type.value + 
+					AbstractMetaclassSize_QV.value.type.value) -
+					0.2 * Hierarchy_QV.value.type.value
+			},
+		type:Understandability_QT
+	}
+	{
+		name: Functionality_QV,
+		calculatedBy:{
+				name: FUNCTIONALITY,
+				aggregatedValue:[Coupling_QV, Intension_QV, ModelingConceptSize_QV]
+				expr: 0.4 * Coupling_QV.value.type.value + 
+						0.4 * Intension_QV.value.type.value +
+						0.2 * ModelingConceptSize_QV.value.type.value 
+			},
+		type:Functionality_QT
+	}
+	{
+		name: Extendibility_QV,
+		calculatedBy:{
+				name: EXTENDIBILITY,
+				aggregatedValue:[Coupling_QV, Intension_QV, ModelingConceptSize_QV]
+				expr: -0.2 * Coupling_QV.value.type.value + 
+						0.3 * Intension_QV.value.type.value +
+						0.2 * (ModelingConceptSize_QV.value.type.value + 
+					AbstractMetaclassSize_QV.value.type.value)
+			},
+		type:Extendibility_QT
+	}
+	{
+		name: Well_Structured_QV,
+		calculatedBy:{
+				name: WELL_STRUCTURED,
+				aggregatedValue:[Coupling_QV, Intension_QV, Hierarchy_QV]
+				expr: -0.2 * Coupling_QV.value.type.value + 
+						0.8 * Intension_QV.value.type.value -
+						0.1 * Hierarchy_QV.value.type.value
+			},
+		type:Well_Structured_QT
+	}
+]
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+Transformation Name,Understandability,Modifiability,Reusability,Consistency
+Ant2Maven,-1.11,-0.15,-1.61,-2.73
+Assertion,-0.52,-0.15,-0.66,-1.18
+ATL2Copy,-5.42,-0.11,-19.57,-18.11
+BibTeX2DocBook,-0.68,-0.18,-0.87,-0.82
+CodeClone2SVG,-0.36,-0.11,-0.18,-0.27
+CodeClone2SVG2,-0.34,-0.12,-0.29,-0.27
+DSL2KM3,-0.41,-0.11,-0.69,-0.82
+DSL2XML,-12.22,-0.87,-1.23,-1.27
+KM32Metrics,-0.33,-0.11,-0.14,-0.18
+KM32Problem,-0.57,-0.11,-1.81,-1.64
+Measure2Table,-0.77,-0.2,-0.29,-1.23
+PathExp2PetriNet,-0.35,-0.28,-0.18,-0.27
+PathExp2TextualPathExp,-0.27,-0.11,-0.54,-0.45
+PetriNet2XML,-0.7,-0.11,-0.28,-0.45
+R2ML2XML,-3.25,-0.11,-4.26,-5
+SimpleSBVR2SimpleUML,-0.36,-0.11,-0.46,-0.73
+Syntax2SimpleSBVR,-0.92,-0.18,-0.85,-1.82
+Table2SVGBarChart,-0.62,-0.11,-0.24,-0.26
+Table2SVGPieChart,-0.73,-0.11,-0.21,-0.35
+UML2AnyLogic,-2.34,-0.15,-0.85,-1.36
+UmlActivityDiagram2MSProject,-0.17,-0.11,-0.3,-0.27
+WFR,-0.57,-0.11,-1.81,-1.64

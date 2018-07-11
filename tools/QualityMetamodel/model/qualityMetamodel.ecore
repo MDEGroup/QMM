@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="QualityMetamodel" nsURI="http://www.univaq.disim.it/mde/qualitymm"
+    nsPrefix="QM">
+  <eClassifiers xsi:type="ecore:EClass" name="QualityModel" eSuperTypes="#//QMM_OCL/Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metricProviders" upperBound="-1"
+        eType="#//MetricProvider" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualityTypes" upperBound="-1"
+        eType="#//ValueType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualityAttributes" upperBound="-1"
+        eType="#//QualityAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualityValues" upperBound="-1"
+        eType="#//Value" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualityAttribute" eSuperTypes="#//QMM_OCL/VariableDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Value"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualityAttributes" upperBound="-1"
+        eType="#//QualityAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true" eSuperTypes="#//QMM_OCL/VariableDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" lowerBound="1"
+        eType="#//ValueType" eOpposite="#//ValueType/val"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueType" abstract="true" eSuperTypes="#//QMM_OCL/VariableDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" lowerBound="1" eType="#//Value"
+        eOpposite="#//Value/valueType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleValue" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measuredBy" lowerBound="1"
+        eType="#//MetricProvider"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AggregatedValue" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calculatedBy" lowerBound="1"
+        eType="#//Operation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aggregatedValues" lowerBound="1"
+        upperBound="-1" eType="#//Value"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//QMM_OCL/OclExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetricProvider">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextValueType" eSuperTypes="#//ValueType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RangeValueType" eSuperTypes="#//ValueType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AggregatedValueMetric" eSuperTypes="#//ValueType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="average" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="median" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="standardDeviation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationMetric" eSuperTypes="#//ValueType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="set" lowerBound="1" upperBound="-1"
+        eType="#//EnumerationItem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//EnumerationItem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealValueType" eSuperTypes="#//ValueType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanValueType" eSuperTypes="#//ValueType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerValueType" eSuperTypes="#//ValueType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListValue" eSuperTypes="#//ValueType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" lowerBound="1"
+        upperBound="-1" eType="#//ValueType" containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="QMM_OCL" nsURI="http://www.univaq.disim.it/mde/qualitymm/ocl"
+      nsPrefix="QMM_OCL">
+    <eClassifiers xsi:type="ecore:EClass" name="LocatedElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="line" lowerBound="1"
+          eType="#//QMM_OCL/Integer" changeable="false" volatile="true" transient="true"
+          defaultValueLiteral="-1" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="column" lowerBound="1"
+          eType="#//QMM_OCL/Integer" changeable="false" volatile="true" transient="true"
+          defaultValueLiteral="-1" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="charStart" lowerBound="1"
+          eType="#//QMM_OCL/Integer" changeable="false" volatile="true" transient="true"
+          defaultValueLiteral="-1" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="charEnd" lowerBound="1"
+          eType="#//QMM_OCL/Integer" changeable="false" volatile="true" transient="true"
+          defaultValueLiteral="-1" derived="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//QMM_OCL/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="metamodels" upperBound="-1"
+          eType="#//QMM_OCL/OclMetamodel" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+          eType="#//QMM_OCL/Import" containment="true" eOpposite="#//QMM_OCL/Import/module"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+          eType="#//QMM_OCL/ModuleElement" containment="true" eOpposite="#//QMM_OCL/ModuleElement/module"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModuleElement" abstract="true" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+          eType="#//QMM_OCL/Module" eOpposite="#//QMM_OCL/Module/elements"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//QMM_OCL/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+          eType="#//QMM_OCL/Module" eOpposite="#//QMM_OCL/Module/imports"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclExpression" abstract="true" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false"
+          eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/oclExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ifExp3" ordered="false"
+          eType="#//QMM_OCL/IfExp" eOpposite="#//QMM_OCL/IfExp/elseExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="appliedProperty" ordered="false"
+          eType="#//QMM_OCL/PropertyCallExp" eOpposite="#//QMM_OCL/PropertyCallExp/source"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="letExp" ordered="false"
+          eType="#//QMM_OCL/LetExp" eOpposite="#//QMM_OCL/LetExp/in_"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="loopExp" ordered="false"
+          eType="#//QMM_OCL/LoopExp" eOpposite="#//QMM_OCL/LoopExp/body"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentOperation" ordered="false"
+          eType="#//QMM_OCL/OperationCall" eOpposite="#//QMM_OCL/OperationCall/arguments"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initializedVariable"
+          ordered="false" eType="#//QMM_OCL/LocalVariable" eOpposite="#//QMM_OCL/LocalVariable/initExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ifExp2" ordered="false"
+          eType="#//QMM_OCL/IfExp" eOpposite="#//QMM_OCL/IfExp/thenExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="owningOperation" ordered="false"
+          eType="#//QMM_OCL/Operation" eOpposite="#//QMM_OCL/Operation/body"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ifExp1" ordered="false"
+          eType="#//QMM_OCL/IfExp" eOpposite="#//QMM_OCL/IfExp/condition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="owningAttribute" ordered="false"
+          eType="#//QMM_OCL/Attribute" eOpposite="#//QMM_OCL/Attribute/initExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOperator" ordered="false"
+          eType="#//QMM_OCL/OperatorCallExp" eOpposite="#//QMM_OCL/OperatorCallExp/source"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referredVariable" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/VariableDeclaration" eOpposite="#//QMM_OCL/VariableDeclaration/variableExp"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SuperExp" eSuperTypes="#//QMM_OCL/OclExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SelfExp" eSuperTypes="#//QMM_OCL/OclExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EnvExp" eSuperTypes="#//QMM_OCL/OclExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveExp" abstract="true" eSuperTypes="#//QMM_OCL/OclExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StringExp" eSuperTypes="#//QMM_OCL/PrimitiveExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringSymbol" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanExp" eSuperTypes="#//QMM_OCL/PrimitiveExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanSymbol" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/Boolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NumericExp" abstract="true" eSuperTypes="#//QMM_OCL/PrimitiveExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RealExp" eSuperTypes="#//QMM_OCL/NumericExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="realSymbol" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/Double"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntegerExp" eSuperTypes="#//QMM_OCL/NumericExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="integerSymbol" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/Integer"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionExp" abstract="true" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
+          eType="#//QMM_OCL/CollectionPart" containment="true" eOpposite="#//QMM_OCL/CollectionPart/collection"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionPart" abstract="true" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="collection" ordered="false"
+          eType="#//QMM_OCL/CollectionExp" eOpposite="#//QMM_OCL/CollectionExp/parts"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionRange" eSuperTypes="#//QMM_OCL/CollectionPart">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="first" lowerBound="1"
+          eType="#//QMM_OCL/OclExpression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="last" lowerBound="1"
+          eType="#//QMM_OCL/OclExpression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionItem" eSuperTypes="#//QMM_OCL/CollectionPart">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="item" lowerBound="1"
+          eType="#//QMM_OCL/OclExpression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BagExp" eSuperTypes="#//QMM_OCL/CollectionExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSetExp" eSuperTypes="#//QMM_OCL/CollectionExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SequenceExp" eSuperTypes="#//QMM_OCL/CollectionExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SetExp" eSuperTypes="#//QMM_OCL/CollectionExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tuplePart" upperBound="-1"
+          eType="#//QMM_OCL/TuplePart" containment="true" eOpposite="#//QMM_OCL/TuplePart/tuple"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TuplePart" eSuperTypes="#//QMM_OCL/LocalVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tuple" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/TupleExp" eOpposite="#//QMM_OCL/TupleExp/tuplePart"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MapExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+          eType="#//QMM_OCL/MapElement" containment="true" eOpposite="#//QMM_OCL/MapElement/map"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MapElement" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="map" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/MapExp" eOpposite="#//QMM_OCL/MapExp/elements"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="key" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumLiteralExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclUndefinedExp" eSuperTypes="#//QMM_OCL/OclExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticPropertyCallExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+          eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/staticPropertyCall"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="staticCall" lowerBound="1"
+          eType="#//QMM_OCL/StaticPropertyCall" containment="true" eOpposite="#//QMM_OCL/StaticPropertyCall/staticCallExp"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticPropertyCall" abstract="true"
+        eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="staticCallExp" lowerBound="1"
+          eType="#//QMM_OCL/StaticPropertyCallExp" eOpposite="#//QMM_OCL/StaticPropertyCallExp/staticCall"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticNavigationOrAttributeCall" eSuperTypes="#//QMM_OCL/StaticPropertyCall">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String" defaultValueLiteral="StaticNavigationOrAttributeCall"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticOperationCall" eSuperTypes="#//QMM_OCL/StaticPropertyCall">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+          eType="#//QMM_OCL/OclExpression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationName" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String" defaultValueLiteral="StaticOperationCall"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PropertyCallExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="calls" lowerBound="1"
+          upperBound="-1" eType="#//QMM_OCL/PropertyCall" containment="true" eOpposite="#//QMM_OCL/PropertyCall/callExp"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/appliedProperty"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PropertyCall" abstract="true" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callExp" lowerBound="1"
+          eType="#//QMM_OCL/PropertyCallExp" eOpposite="#//QMM_OCL/PropertyCallExp/calls"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NavigationOrAttributeCall" eSuperTypes="#//QMM_OCL/PropertyCall">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String" defaultValueLiteral="NavigationOrAttributeCall"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationCall" eSuperTypes="#//QMM_OCL/PropertyCall">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+          eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/parentOperation"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationName" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String" defaultValueLiteral="OperationCall"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperatorCallExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="argument" eType="#//QMM_OCL/OclExpression"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationName" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/appliedOperator"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NotOpCallExp" eSuperTypes="#//QMM_OCL/OperatorCallExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RelOpCallExp" eSuperTypes="#//QMM_OCL/OperatorCallExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EqOpCallExp" eSuperTypes="#//QMM_OCL/OperatorCallExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AddOpCallExp" eSuperTypes="#//QMM_OCL/OperatorCallExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IntOpCallExp" eSuperTypes="#//QMM_OCL/OperatorCallExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MulOpCallExp" eSuperTypes="#//QMM_OCL/OperatorCallExp"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LambdaCallExp" eSuperTypes="#//QMM_OCL/VariableExp">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+          eType="#//QMM_OCL/OclExpression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BraceExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exp" lowerBound="1" eType="#//QMM_OCL/OclExpression"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionOperationCall" eSuperTypes="#//QMM_OCL/OperationCall"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LoopExp" abstract="true" eSuperTypes="#//QMM_OCL/PropertyCall">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/loopExp"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="iterators" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//QMM_OCL/Iterator" containment="true"
+          eOpposite="#//QMM_OCL/Iterator/loopExpr"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IterateExp" eSuperTypes="#//QMM_OCL/LoopExp">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="result" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/LocalVariable" containment="true" eOpposite="#//QMM_OCL/LocalVariable/baseExp"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IteratorExp" eSuperTypes="#//QMM_OCL/LoopExp">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String" defaultValueLiteral="IteratorExp"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LetExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variable" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/LocalVariable" containment="true" eOpposite="#//QMM_OCL/LocalVariable/letExp"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="in_" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/letExp"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IfExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="thenExpression" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/ifExp2"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/ifExp1"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elseExpression" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/ifExp3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" abstract="true"
+        eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false"
+          eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/variableDeclaration"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableExp" ordered="false"
+          upperBound="-1" eType="#//QMM_OCL/VariableExp" eOpposite="#//QMM_OCL/VariableExp/referredVariable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LocalVariable" eSuperTypes="#//QMM_OCL/VariableDeclaration">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="letExp" ordered="false"
+          eType="#//QMM_OCL/LetExp" eOpposite="#//QMM_OCL/LetExp/variable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initExpression" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/initializedVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="baseExp" ordered="false"
+          eType="#//QMM_OCL/IterateExp" eOpposite="#//QMM_OCL/IterateExp/result"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="eq" lowerBound="1" eType="#//QMM_OCL/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iterator" eSuperTypes="#//QMM_OCL/VariableDeclaration">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="loopExpr" ordered="false"
+          eType="#//QMM_OCL/LoopExp" eOpposite="#//QMM_OCL/LoopExp/iterators"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//QMM_OCL/VariableDeclaration">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/Operation" eOpposite="#//QMM_OCL/Operation/parameters"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionType" eSuperTypes="#//QMM_OCL/OclType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/collectionTypes"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclType" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String" defaultValueLiteral="OclType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" ordered="false"
+          eType="#//QMM_OCL/OclContextDefinition" eOpposite="#//QMM_OCL/OclContextDefinition/context_"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="oclExpression" ordered="false"
+          eType="#//QMM_OCL/OclExpression" eOpposite="#//QMM_OCL/OclExpression/type"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" ordered="false"
+          eType="#//QMM_OCL/Operation" eOpposite="#//QMM_OCL/Operation/returnType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mapType2" ordered="false"
+          eType="#//QMM_OCL/MapType" eOpposite="#//QMM_OCL/MapType/valueType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
+          eType="#//QMM_OCL/Attribute" eOpposite="#//QMM_OCL/Attribute/type"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mapType" ordered="false"
+          eType="#//QMM_OCL/MapType" eOpposite="#//QMM_OCL/MapType/keyType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="collectionTypes" ordered="false"
+          eType="#//QMM_OCL/CollectionType" eOpposite="#//QMM_OCL/CollectionType/elementType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tupleTypeAttribute" ordered="false"
+          eType="#//QMM_OCL/TupleTypeAttribute" eOpposite="#//QMM_OCL/TupleTypeAttribute/type"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableDeclaration"
+          ordered="false" eType="#//QMM_OCL/VariableDeclaration" eOpposite="#//QMM_OCL/VariableDeclaration/type"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lambdaReturnType" eType="#//QMM_OCL/LambdaType"
+          eOpposite="#//QMM_OCL/LambdaType/returnType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lambdaArgType" eType="#//QMM_OCL/LambdaType"
+          eOpposite="#//QMM_OCL/LambdaType/argumentTypes"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="staticPropertyCall" eType="#//QMM_OCL/StaticPropertyCallExp"
+          eOpposite="#//QMM_OCL/StaticPropertyCallExp/source"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclModelElementExp" eSuperTypes="#//QMM_OCL/OclExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1"
+          eType="#//QMM_OCL/OclModel"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String" defaultValueLiteral="OclType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Primitive" abstract="true" eSuperTypes="#//QMM_OCL/OclType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="#//QMM_OCL/Primitive"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanType" eSuperTypes="#//QMM_OCL/Primitive"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NumericType" abstract="true" eSuperTypes="#//QMM_OCL/Primitive"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IntegerType" eSuperTypes="#//QMM_OCL/NumericType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RealType" eSuperTypes="#//QMM_OCL/NumericType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BagType" eSuperTypes="#//QMM_OCL/CollectionType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSetType" eSuperTypes="#//QMM_OCL/CollectionType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SequenceType" eSuperTypes="#//QMM_OCL/CollectionType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SetType" eSuperTypes="#//QMM_OCL/CollectionType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAnyType" eSuperTypes="#//QMM_OCL/OclType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleType" eSuperTypes="#//QMM_OCL/OclType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+          eType="#//QMM_OCL/TupleTypeAttribute" containment="true" eOpposite="#//QMM_OCL/TupleTypeAttribute/tupleType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleTypeAttribute" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/tupleTypeAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tupleType" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/TupleType" eOpposite="#//QMM_OCL/TupleType/attributes"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="#//QMM_OCL/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclModelElement" eSuperTypes="#//QMM_OCL/OclType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="model" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclModel" eOpposite="#//QMM_OCL/OclModel/elements"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MapType" eSuperTypes="#//QMM_OCL/OclType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/mapType2"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="keyType" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/mapType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LambdaType" eSuperTypes="#//QMM_OCL/OclType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
+          eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/lambdaReturnType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="argumentTypes" upperBound="-1"
+          eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/lambdaArgType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EnvType" eSuperTypes="#//QMM_OCL/OclType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OclFeatureDefinition" eSuperTypes="#//QMM_OCL/ModuleElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="feature" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclFeature" containment="true" eOpposite="#//QMM_OCL/OclFeature/definition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context_" ordered="false"
+          eType="#//QMM_OCL/OclContextDefinition" containment="true" eOpposite="#//QMM_OCL/OclContextDefinition/definition"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" lowerBound="1"
+          eType="#//QMM_OCL/Boolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclContextDefinition" eSuperTypes="#//QMM_OCL/LocatedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclFeatureDefinition" eOpposite="#//QMM_OCL/OclFeatureDefinition/context_"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context_" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/definitions"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclFeature" abstract="true" eSuperTypes="#//QMM_OCL/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" ordered="false"
+          eType="#//QMM_OCL/OclFeatureDefinition" eOpposite="#//QMM_OCL/OclFeatureDefinition/feature"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="eq" lowerBound="1" eType="#//QMM_OCL/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//QMM_OCL/OclFeature">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initExpression" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/owningAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/attribute"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//QMM_OCL/OclFeature">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//QMM_OCL/Parameter" containment="true" eOpposite="#//QMM_OCL/Parameter/operation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclType" containment="true" eOpposite="#//QMM_OCL/OclType/operation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclExpression" containment="true" eOpposite="#//QMM_OCL/OclExpression/owningOperation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclModel" abstract="true" eSuperTypes="#//QMM_OCL/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elements" ordered="false"
+          upperBound="-1" eType="#//QMM_OCL/OclModelElement" eOpposite="#//QMM_OCL/OclModelElement/model"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclMetamodel" eSuperTypes="#//QMM_OCL/OclModel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="model" ordered="false"
+          upperBound="-1" eType="#//QMM_OCL/OclInstanceModel" eOpposite="#//QMM_OCL/OclInstanceModel/metamodel"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="#//QMM_OCL/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclInstanceModel" eSuperTypes="#//QMM_OCL/OclModel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="metamodel" ordered="false"
+          lowerBound="1" eType="#//QMM_OCL/OclMetamodel" eOpposite="#//QMM_OCL/OclMetamodel/model"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="boolean"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Double" instanceClassName="double"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="int"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+  </eSubpackages>
+</ecore:EPackage>

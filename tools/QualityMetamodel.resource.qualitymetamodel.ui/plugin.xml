@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelUIMetaInformation" id="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="qualitymetamodel" icon="icons/editor_icon.gif" id="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelEditor" name="EMFText qualitymetamodel Editor">
+			<contentTypeBinding contentTypeId="QualityMetamodel.resource.qualitymetamodel">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Qualitymetamodel Text Editor" id="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelPreferencePage" class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelSyntaxColoringPreferencePage" class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelSyntaxColoringPreferencePage" category="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelPreferencePage">
+		</page>
+		<page name="Brackets" id="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelBracketPreferencePage" class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelBracketPreferencePage" category="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelNewFileWizard" id="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelNewFileWizard" name="EMFText .qualitymetamodel file">
+		</wizard>
+		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelNewProjectWizard" id="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelNewProjectWizard" name="EMFText qualitymetamodel project" project="true">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelMarkerResolutionGenerator" markerType="QualityMetamodel.resource.qualitymetamodel.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelAnnotationModelFactory" extensions="qualitymetamodel">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="QualityMetamodel.resource.qualitymetamodel" name=".qualitymetamodel File" base-type="org.eclipse.core.runtime.text" file-extensions="qualitymetamodel">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="qualitymetamodel" id="QualityMetamodel.resource.qualitymetamodel.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="QualityMetamodel.resource.qualitymetamodel.ui.occurences">
+		</type>
+		<type name="QualityMetamodel.resource.qualitymetamodel.ui.occurences.declaration" super="QualityMetamodel.resource.qualitymetamodel.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="QualityMetamodel.resource.qualitymetamodel.ui.occurences" label="Occurrences (in .qualitymetamodel files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="qualitymetamodel.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="qualitymetamodel.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="qualitymetamodel.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="qualitymetamodel.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="qualitymetamodel.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="qualitymetamodel.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="qualitymetamodel.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="qualitymetamodel.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="qualitymetamodel.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="QualityMetamodel.resource.qualitymetamodel.ui.occurences.declaration" label="Declarations (in .qualitymetamodel files)" textPreferenceKey="qualitymetamodel.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="qualitymetamodel.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="qualitymetamodel.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="qualitymetamodel.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="qualitymetamodel.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="qualitymetamodel.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="QualityMetamodel.resource.qualitymetamodel.ui.debug.lineBreakpoint" markerType="QualityMetamodel.resource.qualitymetamodel.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="QualityMetamodel.resource.qualitymetamodel.ui.debug.lineBreakpoint" label="Breakpoints (in .qualitymetamodel files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="QualityMetamodel.resource.qualitymetamodel.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="QualityMetamodel.resource.qualitymetamodel.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="QualityMetamodel.resource.qualitymetamodel.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="QualityMetamodel.resource.qualitymetamodel.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="QualityMetamodel.resource.qualitymetamodel.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="QualityMetamodel.resource.qualitymetamodel.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="QualityMetamodel.resource.qualitymetamodel.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="QualityMetamodel.resource.qualitymetamodel.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="QualityMetamodel.resource.qualitymetamodel.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelEditor" class="QualityMetamodel.resource.qualitymetamodel.ui.debug.QualitymetamodelAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="QualityMetamodel.resource.qualitymetamodel.debug.QualitymetamodelDebugVariable" class="QualityMetamodel.resource.qualitymetamodel.ui.debug.QualitymetamodelAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="QualityMetamodel.resource.qualitymetamodel.debug.QualitymetamodelDebugVariable" class="QualityMetamodel.resource.qualitymetamodel.ui.debug.QualitymetamodelAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="QualityMetamodel.resource.qualitymetamodel.ui.RulerPopupActions" targetID="QualityMetamodel.resource.qualitymetamodel.EditorRuler">
+			<action id="QualityMetamodel.resource.qualitymetamodel.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="QualityMetamodel.resource.qualitymetamodel.ui.QualitymetamodelEditor" id="QualityMetamodel.resource.qualitymetamodel.ui.BreakpointRulerActions">
+			<action id="QualityMetamodel.resource.qualitymetamodel.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="QualityMetamodel.resource.qualitymetamodel.debugModel" class="QualityMetamodel.resource.qualitymetamodel.ui.debug.QualitymetamodelDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

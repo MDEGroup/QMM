@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax">
+		<metaInformationProvider class="QualityMetamodel.resource.qualitymetamodel.mopp.QualitymetamodelMetaInformation" id="QualityMetamodel.resource.qualitymetamodel.mopp.QualitymetamodelMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension id="QualityMetamodel.resource.qualitymetamodel.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<super type="org.eclipse.emf.ecore.diagnostic">
+		</super>
+	</extension>
+	
+	<extension id="QualityMetamodel.resource.qualitymetamodel.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="QualityMetamodel.resource.qualitymetamodel.problem">
+		</super>
+	</extension>
+	
+	<extension id="QualityMetamodel.resource.qualitymetamodel.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="QualityMetamodel.resource.qualitymetamodel.problem">
+		</super>
+	</extension>
+	
+	<extension id="QualityMetamodel.resource.qualitymetamodel.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="QualityMetamodel.resource.qualitymetamodel.problem">
+		</super>
+	</extension>
+	
+	<extension id="QualityMetamodel.resource.qualitymetamodel.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="QualityMetamodel.resource.qualitymetamodel.problem">
+		</super>
+	</extension>
+	
+	<extension id="QualityMetamodel.resource.qualitymetamodel.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="QualityMetamodel.resource.qualitymetamodel.problem">
+		</super>
+	</extension>
+	
+	<extension id="QualityMetamodel.resource.qualitymetamodel.nature" name="qualitymetamodel nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="QualityMetamodel.resource.qualitymetamodel.mopp.QualitymetamodelNature">
+			</run>
+		</runtime>
+		<builder id="QualityMetamodel.resource.qualitymetamodel.builder">
+		</builder>
+	</extension>
+	
+	<extension point="org.eclipse.core.resources.builders" id="QualityMetamodel.resource.qualitymetamodel.builder" name="qualitymetamodel Builder">
+		<builder hasNature="true">
+			<run class="QualityMetamodel.resource.qualitymetamodel.mopp.QualitymetamodelBuilderAdapter">
+			</run>
+		</builder>
+	</extension>
+	
+	<extension-point id="QualityMetamodel.resource.qualitymetamodel.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser class="QualityMetamodel.resource.qualitymetamodel.mopp.QualitymetamodelResourceFactoryDelegator" type="qualitymetamodel">
+		</parser>
+	</extension>
+	
+	<extension-point id="QualityMetamodel.resource.qualitymetamodel.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.debug.core.breakpoints">
+		<breakpoint class="QualityMetamodel.resource.qualitymetamodel.debug.QualitymetamodelLineBreakpoint" id="QualityMetamodel.resource.qualitymetamodel.debug.breakpoint" markerType="QualityMetamodel.resource.qualitymetamodel.debug.lineBreakpoint.marker" name="qualitymetamodel Breakpoint">
+		</breakpoint>
+	</extension>
+	
+	<extension id="QualityMetamodel.resource.qualitymetamodel.debug.lineBreakpoint.marker" point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.debug.core.lineBreakpointMarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<persistent value="true">
+		</persistent>
+	</extension>
+	
+</plugin>
